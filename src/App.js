@@ -8,42 +8,24 @@ import Footer from './components/Footer';
 
 const AppWrapper = styled.div`
   background: var(--grayDark);
-
-  @media( max-width: 800px){
-    padding-top: 40px;
-  }
 `;
 
 function App() {
+  
+  var i = Math.floor(Math.random() * dadosIniciais.categorias.length);
+  var j = Math.floor(Math.random() * dadosIniciais.categorias[i].videos.length);
   return (
     <AppWrapper>
 
       <Menu />
 
       <BannerMain 
-        videoTitle={dadosIniciais.categorias[0].videos[0].titulo}
-        videoDescription={dadosIniciais.categorias[0].videos[0].videoDescription}
-        url={dadosIniciais.categorias[0].videos[0].url} />
+        videoTitle={dadosIniciais.categorias[i].videos[j].titulo}
+        videoDescription={dadosIniciais.categorias[i].videos[j].videoDescription}
+        url={dadosIniciais.categorias[i].videos[j].url} />
 
-      <Carousel
-        category={dadosIniciais.categorias[0]}
-        ignoreFirstVideo={true}
-      />
-      <Carousel
-        category={dadosIniciais.categorias[1]}
-      />
-      <Carousel
-        category={dadosIniciais.categorias[2]}
-      />
-      <Carousel
-        category={dadosIniciais.categorias[3]}
-      />
-      <Carousel
-        category={dadosIniciais.categorias[4]}
-      />
-      <Carousel
-        category={dadosIniciais.categorias[5]}
-      />
+      {dadosIniciais.categorias && dadosIniciais.categorias.map(
+        (categoria)=> <Carousel category={categoria} />)}
 
       <Footer/>
 
