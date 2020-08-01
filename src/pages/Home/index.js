@@ -1,16 +1,16 @@
-import React from 'react'
-import styled from 'styled-components'
-import Menu from './components/Menu';
-import BannerMain from './components/BannerMain'
-import Carousel from './components/Carousel'
-import dadosIniciais from './data/dados_iniciais.json'
-import Footer from './components/Footer';
+import React from '../../../node_modules/react'
+import styled from '../../../node_modules/styled-components'
+import Menu from '../../components/Menu';
+import BannerMain from '../../components/BannerMain'
+import Carousel from '../../components/Carousel'
+import dadosIniciais from '../../data/dados_iniciais.json'
+import Footer from '../../components/Footer';
 
 const AppWrapper = styled.div`
   background: var(--grayDark);
 `;
 
-function App() {
+function Home() {
   
   var i = Math.floor(Math.random() * dadosIniciais.categorias.length);
   var j = Math.floor(Math.random() * dadosIniciais.categorias[i].videos.length);
@@ -33,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
