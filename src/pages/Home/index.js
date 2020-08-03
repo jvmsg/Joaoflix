@@ -25,7 +25,7 @@ function Home() {
         url={dadosIniciais.categorias[i].videos[j].url} />
 
       {dadosIniciais.categorias && dadosIniciais.categorias.map(
-        (categoria)=> <Carousel category={categoria} />)}
+        (categoria) => <Carousel category={categoria} key={categoria.titulo} />)}
 
       <Footer/>
 
